@@ -1,4 +1,4 @@
-React Tutorial by Vaibhav Karnwal
+#React Tutorial by Vaibhav Karnwal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -57,11 +57,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * ### Stateless Functional Component
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
->
+
 >`
 import './App.css';
 import Geek from "./Components/Geek"
-
 function App() {
   return (
     <div className="App">
@@ -69,15 +68,12 @@ function App() {
     </div>
   );
 }
-
 export default App;
 `
 >`import React from 'react'
-
 function Geek(){
     return <h1>Hello vaibhav</h1>
 }
-
 export default Geek;`
 
 * ### Stateful Class Component
@@ -95,4 +91,3 @@ export default Geek;`
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
