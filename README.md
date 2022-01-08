@@ -57,27 +57,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * ### Stateless Functional Component
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
+```jsx harmony
+import './App.css';
+import Geek from "./Components/Geek"
 
->`import './App.css';
->import Geek from "./Components/Geek"
->function App() {
->  return (
->    <div className="App">
->      <Geek/>
->    </div>
->  );
->}`
->
->export default App;
+function App() {
+  return (
+    <div className="App">
+      <Geek/>
+    </div>
+  );
+}
 
->import React from 'react'
->
->`function Geek(){
->    return <h1>Hello vaibhav</h1>
->}`
->
->export default Geek;`
+export default App;
+```
+```jsx harmony
+import React from 'react'
 
+function Geek(){
+    return <h1>Hello vaibhav</h1>
+}
+
+export default Geek;`
+```
 * ### Stateful Class Component
 
 >Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI. They must contains render method which returns the html.
@@ -93,27 +95,33 @@ class Fun React.Component{
 
 >Javascript XML (JSX) is the javascript extension to the javascript langauge syntax.
 
->In JSX
+```jsx harmony
+In JSX
 
->`import React from 'react'
+import React from 'react'
 const Hello = () => {
     return (
         <div>
             <h1>vaibhav karnwal</h1>
         </div>
     )
-}`
+}
+```
 
->Without JSX
 
->`const Hello = () => {
+```jsx harmony
+Without JSX
+
+const Hello = () => {
     return React.createElement(
         'div',
         {id:'hello'}
         React.createEmenet('h1','vaibhav karnwal')
     )
-}`
->`export default Hello`
+}
+
+export default Hello
+```
 
 
 ## Learn More
