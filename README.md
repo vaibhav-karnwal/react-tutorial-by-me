@@ -80,26 +80,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * ### Stateful Class Component
 
+```jsx harmony
 >Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI. They must contains render method which returns the html.
->
-> class Fun React.Component{
->    render(){
->       return <h1>hello,{this.props.name}</h1>
->}
->}
+
+class Fun React.Component{
+    render(){
+       return <h1>hello,{this.props.name}</h1>
+    }
+}
+```
 
 ## JSX
 
 >Javascript XML (JSX) is the javascript extension to the javascript langauge syntax.
 
->import React from 'react'
->`const Hello = () => {
+>In JSX
+
+>`import React from 'react'
+const Hello = () => {
     return (
         <div>
             <h1>vaibhav karnwal</h1>
         </div>
     )
 }`
+
+>Without JSX
 
 >`const Hello = () => {
     return React.createElement(
@@ -108,7 +114,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
         React.createEmenet('h1','vaibhav karnwal')
     )
 }`
->export default Hello
+>`export default Hello`
 
 
 ## Learn More
