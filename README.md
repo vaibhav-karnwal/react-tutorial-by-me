@@ -51,16 +51,34 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Components
 
->In react, component represent a part of user interface. Components also contains other components. 
+>In react, Components are the building blocks of every react application. Component describes a part of user interface. They are reusable and can be nested inside other components. 
 >In React there are two components
 
 * ### Stateless Functional Component
 
->Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. 
+>Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
 >
->`function fun(props){
->   return <h1>Hello,{props.name}</h1>
->}`
+>`
+import './App.css';
+import Geek from "./Components/Geek"
+
+function App() {
+  return (
+    <div className="App">
+      <Geek/>
+    </div>
+  );
+}
+
+export default App;
+`
+>`import React from 'react'
+
+function Geek(){
+    return <h1>Hello vaibhav</h1>
+}
+
+export default Geek;`
 
 * ### Stateful Class Component
 
@@ -78,26 +96,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
