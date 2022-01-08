@@ -75,18 +75,41 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >`function Geek(){
 >    return <h1>Hello vaibhav</h1>
 >}`
-
+>
 >export default Geek;`
 
 * ### Stateful Class Component
 
->Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They must contains render method which returns the html.
+>Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI. They must contains render method which returns the html.
 >
 > class Fun React.Component{
 >    render(){
 >       return <h1>hello,{this.props.name}</h1>
 >}
 >}
+
+## JSX
+
+>Javascript XML (JSX) is the javascript extension to the javascript langauge syntax.
+
+>import React from 'react'
+>`const Hello = () => {
+    return (
+        <div>
+            <h1>vaibhav karnwal</h1>
+        </div>
+    )
+}`
+
+>`const Hello = () => {
+    return React.createElement(
+        'div',
+        {id:'hello'}
+        React.createEmenet('h1','vaibhav karnwal')
+    )
+}`
+>export default Hello
+
 
 ## Learn More
 
