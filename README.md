@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+React Tutorial by Vaibhav Karnwal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -26,24 +26,23 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Folder Structure
 
-
-* ### Package.json
-
+>* ### Package.json
+>
 >This file contains the dependencies and scripts that are required for the project.
-
-* ### Node modules
+>
+>* ### Node modules
 >This is the folder in which all the dependencies are installed. It is generated when we run create-react-app command or npm install. 
-
-* ### src/index.js
-
+>
+>* ### src/index.js
+>
 >In index.js file we specify the root component which is App component and the DOM element. DOM element is the element with the id of root which is the id name given in the index.html file.
-
-* ### src/App.js
-
+>
+>* ### src/App.js
+>
 >This file is responsible for the html displayed in the browser.
-
-* ### src/App.test.js
-
+>
+>* ### src/App.test.js
+>
 >This file contains unit tests.
 
 ## Work flow
@@ -67,11 +66,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 >Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They must contains render method which returns the html.
 >
-> class Fun React.Component{
+> `class Fun React.Component{
 >    render(){
 >       return <h1>hello,{this.props.name}</h1>
 >}
->}
+>}`
 
 ## Learn More
 
