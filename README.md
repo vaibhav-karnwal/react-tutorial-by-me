@@ -1,4 +1,3 @@
-# react-tutorial-by-me
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -27,22 +26,23 @@ React is a open source library for building rich User Interfaces. It does not fo
 
 ## Folder Structure
 
-### Package.json
+
+* ### Package.json
 
 This file contains the dependencies and scripts that are required for the project.
 
-### Node modules
+* ### Node modules
 This is the folder in which all the dependencies are installed. It is generated when we run create-react-app command or npm install. 
 
-### src/index.js
+* ### src/index.js
 
 In index.js file we specify the root component which is App component and the DOM element. DOM element is the element with the id of root which is the id name given in the index.html file.
 
-### src/App.js
+* ### src/App.js
 
 This file is responsible for the html displayed in the browser.
 
-### src/App.test.js
+* ### src/App.test.js
 
 This file contains unit tests.
 
@@ -51,6 +51,20 @@ This file contains unit tests.
 public/index.html---> src/index.js---renders--> src/App.js
 
 ## Components
+
+In react, component represent a part of user interface. Components also contains other components. 
+In React there are two components
+
+* ### Stateless Functional Component
+
+Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. 
+
+>```function fun(props){
+>   return <h1>Hello,{props.name}</h1>
+>}```
+* ### Stateful Class Component
+
+Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They must contains render method which returns the html.
 
 ## Learn More
 
