@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## React
  
 >React is a open source library for building rich User Interfaces. It does not focus on routing and http request but only focuses on building User Interface. It is created and maintained by facebook.
-
+>
 >* React has a component based architechture which lets breakdown application into small encapsulated part which then be composed to make complex user interfaces like a website can be breakdown into
 `header`
 `sidebar`
@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Create-react-app
 
 >* `npx create-react-app app-name`(npx is a npm package runner which is installed with the node.js which helps in creating app withput installing the package globally)
->###### or
+> or
 >* `npm install create-react-app -g`(firstly we have to install the react-app package globally)
 >* `create-react-app app-name`(then we are able to make the app)
 
@@ -58,13 +58,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * ### Stateless Functional Component
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. 
-
->function fun(props){
+>
+>`function fun(props){
 >   return <h1>Hello,{props.name}</h1>
->}
+>}`
+
 * ### Stateful Class Component
 
 >Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They must contains render method which returns the html.
+>
+> class Fun React.Component{
+>    render(){
+>       return <h1>hello,{this.props.name}</h1>
+>}
+>}
 
 ## Learn More
 
