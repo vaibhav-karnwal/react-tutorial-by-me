@@ -1,4 +1,4 @@
-#React Tutorial by Vaibhav Karnwal
+# React Tutorial by Vaibhav Karnwal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -58,33 +58,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
 
->`
-import './App.css';
-import Geek from "./Components/Geek"
-function App() {
-  return (
-    <div className="App">
-      <Geek/>
-    </div>
-  );
-}
-export default App;
-`
->`import React from 'react'
-function Geek(){
-    return <h1>Hello vaibhav</h1>
-}
-export default Geek;`
+>import './App.css';
+>import Geek from "./Components/Geek"
+>function App() {
+>  return (
+>    <div className="App">
+>      <Geek/>
+>    </div>
+>  );
+>}
+>export default App;
+
+>import React from 'react'
+>function Geek(){
+>    return <h1>Hello vaibhav</h1>
+>}
+>export default Geek;`
 
 * ### Stateful Class Component
 
 >Stateful Class Components are the regular Es6 classes that extend the component class from the react library. They must contains render method which returns the html.
 >
-> `class Fun React.Component{
+> class Fun React.Component{
 >    render(){
 >       return <h1>hello,{this.props.name}</h1>
 >}
->}`
+>}
 
 ## Learn More
 
