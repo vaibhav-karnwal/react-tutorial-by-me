@@ -1,57 +1,17 @@
 # react-tutorial-by-me
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-# Lets Start Learning
 
 ## React
  
 React is a open source library for building rich User Interfaces. It does not focus on routing and http request but only focuses on building User Interface. It is created and maintained by facebook.
 
-React has a component based architechture which lets breakdown application into small encapsulated part which then be composed to make complex user interfaces like a website can be breakdown into
-** header
-**sidebar
-**main content
-**footer
+* React has a component based architechture which lets breakdown application into small encapsulated part which then be composed to make complex user interfaces like a website can be breakdown into
+`header`
+`sidebar`
+`main content`
+`footer`
 * Each section represent a component which then composed in the right way can makeup a website.
 * Components also it possible to write reusable code.
 * React is declarative means we just have to tell react what we want and react with its react dom libarary will build the actual UI.
@@ -60,10 +20,10 @@ React has a component based architechture which lets breakdown application into 
 
 ## Create-react-app
 
-* npx create-react-app app-name(npx is a npm package runner which is installed with the node.js which helps in creating app withput installing the package globally)
+* `npx create-react-app app-name`(npx is a npm package runner which is installed with the node.js which helps in creating app withput installing the package globally)
 ### or
-* npm install create-react-app -g(firstly we have to install the react-app package globally)
-* create-react-app app-name(then we are able to make the app)
+* `npm install create-react-app -g`(firstly we have to install the react-app package globally)
+* `create-react-app app-name`(then we are able to make the app)
 
 ## Folder Structure
 
