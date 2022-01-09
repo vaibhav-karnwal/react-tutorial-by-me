@@ -56,7 +56,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * ### Stateless Functional Component
 
-Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
+>Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
 ```jsx harmony
 import './App.css';
 import Geek from "./Components/Geek"
