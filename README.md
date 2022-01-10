@@ -93,7 +93,7 @@ class Fun React.Component{
 
 ## JSX
 
->Javascript XML (JSX) is the javascript extension to the javascript langauge syntax.
+>Javascript XML (JSX) is the javascript extension to the javascript langauge syntax. Jsx translate into React.Element and 
 
 ```jsx harmony
 In JSX
@@ -116,7 +116,7 @@ const Hello = () => {
     return React.createElement(
         'div',
         {id:'hello'}
-        React.createEmenet('h1','vaibhav karnwal')
+        React.createElement('h1','vaibhav karnwal')
     )
 }
 
