@@ -93,7 +93,7 @@ class Fun React.Component{
 
 ## JSX
 
->Javascript XML (JSX) is the javascript extension to the javascript langauge syntax. Jsx translate into React.Element and 
+>Javascript XML (JSX) is the javascript extension to the javascript langauge syntax which describes the user interface. We do have to import React library for using Jsx. Jsx translate into React.CreateElement which in turn uses the react library.
 
 ```jsx harmony
 In JSX
@@ -106,12 +106,15 @@ const Hello = () => {
         </div>
     )
 }
+
+export default Hello
 ```
 
 
 ```jsx harmony
 Without JSX
 
+import React from 'react'
 const Hello = () => {
     return React.createElement(
         'div',
@@ -123,7 +126,83 @@ const Hello = () => {
 export default Hello
 ```
 
+## Props
 
+>Props is the shortcut for properties, is the optional input that component can accept. It also allows the component to be dynamic.
+
+```jsx harmony
+import React from 'react'
+import TextForm from './TextForm';
+
+export default function Navbar(){
+    return(
+        <>
+            <div className='container'>
+                <TextForm heading = "Enter text in the textarea"/>
+            </div>
+        </>
+    )
+}
+```
+
+```jsx harmony
+import React from 'react'
+
+export default function TextForm(props) {
+    return (
+        <>
+            <div className="container">
+                <h1>{props.heading}</h1>
+            </div>
+        </>
+    )
+}
+
+```
+
+```jsx harmony
+import React,{Component} from 'react'
+import TextForm from './TextForm';
+
+class Navbar extends React.Component{
+    render(){
+       return(
+        <>
+            <div className='container'>
+                <TextForm heading = "Enter text in the textarea"/>
+            </div>
+        </>
+       )
+    }
+}
+```
+
+```jsx harmony
+import React,{Component} from 'react'
+
+class TextForm extends React.Component{
+    render(){
+       return(
+         <> 
+            <div className="container">
+                <h1>{this.props.heading}</h1>
+            </div>
+         </>
+       )
+    }
+}
+
+```
+##Comparison between Props and State
+
+* Props get passed to the component similar to function parameters whereas state is managed within the component similar to variables declared within a function.
+* As props are passed from parent to child so props are immutable whereas state are amanaged within the class component so state can be changed.
+* In functional Components props are used as {props} whereas in class Component props are used as this.props.
+* In functional Components state is managed by useState Hook whereas in class Component state is managed by using this.state.
+
+##State
+
+>
 ## Learn More
 
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
