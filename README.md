@@ -193,14 +193,14 @@ class TextForm extends React.Component{
 }
 
 ```
-##Comparison between Props and State
+## Comparison between Props and State
 
 * Props get passed to the component similar to function parameters whereas state is managed within the component similar to variables declared within a function.
 * As props are passed from parent to child so props are immutable whereas state are amanaged within the class component so state can be changed.
 * In functional Components props are used as {props} whereas in class Component props are used as this.props.
 * In functional Components state is managed by useState Hook whereas in class Component state is managed by using this.state.
 
-##State
+## State
 
 >
 ## Learn More
