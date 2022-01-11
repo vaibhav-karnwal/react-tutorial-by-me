@@ -236,7 +236,11 @@ class TextForm extends React.Component{
 
 ## State
 
->
+>State is an object. if normal variable are update then react components are not update in react because react wroking method is different. react only update its components when changes appearing in props and state.
+>If there is change in state then react render jsx code only, otherwise it doesn't render.
+        
+* ### useState
+
 ```jsx harmony
 import React,{useState} from 'react'
 
@@ -271,6 +275,8 @@ export default function TextForm(props) {
     )
 }
 ```
+
+* ### setState
 
 ```jsx harmony
 import React,{Component} from 'react'
