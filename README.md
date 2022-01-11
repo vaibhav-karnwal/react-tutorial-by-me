@@ -275,17 +275,31 @@ export default function TextForm(props) {
 ```jsx harmony
 import React,{Component} from 'react'
 
-class TextForm extends React.Component{
-    render(){
-       return(
-         <> 
-            <div className="container">
-                <h1>{this.props.heading}</h1>
-            </div>
-         </>
-       )
+class TextForm extends Component {
+
+    constructor(){
+        super();
+        this.state = {
+            text:"vaibhav karnwal"
+        }
     }
+
+    handleUpClick=()=>{
+        this.setState({text:"Welcome"});
+    }
+   
+    render(){
+    return (
+        <>
+            <div className="container my-3">
+                <label for="formGroupExampleInput">{this.state.text}</label>
+            </div>
+            <button className='btn btn-primary mx-3' onClick={()=>this.handleUpClick()}>Click me</button>
+        </>
+    )}
 }
+
+export default TextForm;
 
 ```
 
