@@ -62,6 +62,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >
 >It is present in large details.It contain details of package.json,and contains history of all package and control them.
 
+### What is dependency?.
+
+>A dependency is some third-party code that your application depends on. Just like a child depends on its parent, your application depends on other people's code. A piece of code becomes a true dependency when your own application cannot function without it.
 
 ## Work flow
 
@@ -70,11 +73,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Components
 
 >In react, Components are the building blocks of every react application. Component describes a part of user interface. They are reusable and can be nested inside other components. 
->In React there are two components
+
+### Types of Components:
+
+>Basicaly for creating components we can create function base and class base components and using this there are many types of components. There is no specific number of components.
+                1. Fuctional Component
+                2. Class Component
+                3. HOC (Higher order component)
+                4. Pure Conponent
+                5. Controlled Component
+                6. Uncontrolled Component
+
 
 * ### Stateless Functional Component
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
+
 ```jsx harmony
 import './App.css';
 import Geek from "./Components/Geek"
