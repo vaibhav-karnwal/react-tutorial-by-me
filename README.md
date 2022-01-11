@@ -4,7 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## React
  
->React is a open source library for building rich User Interfaces. It does not focus on routing and http request but only focuses on building User Interface. It is created and maintained by facebook.
+>React is a open source library for building rich User Interfaces. It does not focus on routing and http request but focuses on building User Interface. It is created and maintained by facebook. Angular & vue also work same like react. This is used to build Single Page Application[SAP] means Complete Website in Single Page.
+## Why we used React? 
+>React is Fast. Why is React Fas because React Use Virtual DOM. Virtual DOM update only required list. Real DOM update Complete List.
 >
 >* React has a component based architechture which lets breakdown application into small encapsulated part which then be composed to make complex user interfaces like a website can be breakdown into
 `header`
@@ -31,7 +33,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >This file contains the dependencies and scripts that are required for the project.
 >
 >* ### Node modules
->This is the folder in which all the dependencies are installed. It is generated when we run create-react-app command or npm install. 
+>This is the folder in which all the dependencies and packages are installed. It is generated when we run create-react-app command or npm install. 
 >
 >* ### src/index.js
 >
@@ -44,7 +46,31 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >* ### src/App.test.js
 >
 >This file contains unit tests.
-
+>public[it contains html kinds of details. it is not related to react]
+    |       |_favicon.ico
+    |       |_index.html[index this react find root id which is wirtten in index.js render]
+    |       |_logo192.png
+    |       |_logo512.png
+    |       |_manifest.json[it is a mata file,it conatins icons, display theme. it's used when we create progresive app.]
+    |       |_robosts.txt[it is used to protect form google and it's not related to react.]
+    |
+    |---->src[all work is done here of react]
+    |       |_App.css
+    |       |_App.js
+    |       |_App.test.js[here we write unique test cases]//developer run some test cases through CLI.
+    |       |_index.css
+    |       |_index.js[this is entry point of react]
+    |       |_logo.svg
+    |       |_reportWebVitals.js[it give us performance report & inbuild in index.js at bottom]
+    |       |_setupTests.js[unique test cases setup start from here]
+    |
+    |---->gitignore[it is not related to react it used for git, those we don't want to commmit that write here.]
+    |
+    |---->package-lock.json[it is present in large details]
+    |     [it contain details of package.json,and contains history of all package and control them]
+    |
+    |---->package.json[it is not in details]
+         [it contain file name version,all commands and package[it contains details of application]]
 ## Work flow
 
 >public/index.html---> src/index.js---renders--> src/App.js
@@ -195,12 +221,67 @@ class TextForm extends React.Component{
 ```
 ## Comparison between Props and State
 
+>Props and State holds information that influences the UI in the browser.
+
 * Props get passed to the component similar to function parameters whereas state is managed within the component similar to variables declared within a function.
 * As props are passed from parent to child so props are immutable whereas state are amanaged within the class component so state can be changed.
 * In functional Components props are used as {props} whereas in class Component props are used as this.props.
 * In functional Components state is managed by useState Hook whereas in class Component state is managed by using this.state.
 
 ## State
+
+>
+```jsx harmony
+import React,{useState} from 'react'
+
+export default function TextForm(props) {
+
+    const [text,setText]= useState("Enter text here");
+
+    const handleUpClick=()=>{
+        let up = text.toUpperCase();
+        setText(up);
+    }
+    const handleLoClick=()=>{
+        let up = text.toLowerCase();
+        setText(up);
+    }
+
+    const changeInText=(event)=>{
+        setText(event.target.value);
+    }
+    return (
+        <>
+            <div className="container my-3">
+                <label for="formGroupExampleInput">{props.heading}</label>
+                <input type="text" className="form-control" value ={text} onChange={changeInText} id="formGroupExampleInput"/>
+            </div>
+            <button className='btn btn-primary mx-3' onClick={handleUpClick}>change to uppercase</button>
+            <button className='btn btn-primary mx-3' onClick={handleLoClick}>change to lowercase</button>
+            <div className='container'>
+                <p>{text.split(" ").length} words and {text.length} characters</p>
+            </div>
+        </>
+    )
+}
+```
+
+```jsx harmony
+import React,{Component} from 'react'
+
+class TextForm extends React.Component{
+    render(){
+       return(
+         <> 
+            <div className="container">
+                <h1>{this.props.heading}</h1>
+            </div>
+         </>
+       )
+    }
+}
+
+```
 
 >
 ## Learn More
