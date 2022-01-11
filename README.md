@@ -32,9 +32,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 >* ### Package.json
 >
->This file contains the dependencies and scripts that are required for the project.
+>package.json is used to store the metadata associated with the project as well as to store the list of dependency packages. In order to add dependency packages to your projects, this file makes it easy for others to manage and install the packages associated with the project. It contians all details about project like project name, react-version, which commands, library, dependency.
 >
 >* ### Node modules
+>
 >This is the folder in which all the dependencies and packages are installed. It is generated when we run create-react-app command or npm install. 
 >
 >* ### src/index.js
@@ -47,32 +48,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >
 >* ### src/App.test.js
 >
->This file contains unit tests.
->public[it contains html kinds of details. it is not related to react]
-    |       |_favicon.ico
-    |       |_index.html[index this react find root id which is wirtten in index.js render]
-    |       |_logo192.png
-    |       |_logo512.png
-    |       |_manifest.json[it is a mata file,it conatins icons, display theme. it's used when we create progresive app.]
-    |       |_robosts.txt[it is used to protect form google and it's not related to react.]
-    |
-    |---->src[all work is done here of react]
-    |       |_App.css
-    |       |_App.js
-    |       |_App.test.js[here we write unique test cases]//developer run some test cases through CLI.
-    |       |_index.css
-    |       |_index.js[this is entry point of react]
-    |       |_logo.svg
-    |       |_reportWebVitals.js[it give us performance report & inbuild in index.js at bottom]
-    |       |_setupTests.js[unique test cases setup start from here]
-    |
-    |---->gitignore[it is not related to react it used for git, those we don't want to commmit that write here.]
-    |
-    |---->package-lock.json[it is present in large details]
-    |     [it contain details of package.json,and contains history of all package and control them]
-    |
-    |---->package.json[it is not in details]
-         [it contain file name version,all commands and package[it contains details of application]]
+>This file contains unique tests.
+>
+>* ### manifest.json
+>
+>It is a mata file, that conatins icons, display theme. It is used when we create progresive app.
+    
+>* ### gitignore
+
+>It is not related to react, it used for git, those we don't want to commmit that write here.
+>
+>* ### package-lock.json
+>
+>It is present in large details.It contain details of package.json,and contains history of all package and control them.
+
+
 ## Work flow
 
 >public/index.html---> src/index.js---renders--> src/App.js
