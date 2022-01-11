@@ -5,9 +5,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## React
  
 >React is a open source library for building rich User Interfaces. It does not focus on routing and http request but focuses on building User Interface. It is created and maintained by facebook. Angular & vue also work same like react. This is used to build Single Page Application[SAP] means Complete Website in Single Page.
-## Why we used React? 
->React is Fast. Why is React Fas because React Use Virtual DOM. Virtual DOM update only required list. Real DOM update Complete List.
->
 >* React has a component based architechture which lets breakdown application into small encapsulated part which then be composed to make complex user interfaces like a website can be breakdown into
 `header`
 `sidebar`
@@ -18,6 +15,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 >* React is declarative means we just have to tell react what we want and react with its react dom libarary will build the actual UI.
 >* React handles efficiently updating and rendering the right component in the application whenever the data changes.
 >* DOM updates are handles gracefully in react.
+
+>
+## Why we used React? 
+>React is Fast. Why is React Fas because React Use Virtual DOM. Virtual DOM update only required list. Real DOM update Complete List.
+
 
 ## Create-react-app
 
