@@ -89,25 +89,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 >Stateless Functional Components are literally the javascript Functions which return that html that describes the UI. They can optionaly receive the object of properties which is refers as a props and returns the html that describes the UI.
 
-```jsx harmony
-import './App.css';
-import Geek from "./Components/Geek"
-
-function App() {
-  return (
-    <div className="App">
-      <Geek/>
-    </div>
-  );
-}
-
-export default App;
 ```
 ```jsx harmony
 import React from 'react'
 
-function Geek(){
-    return <h1>Hello vaibhav</h1>
+function Geek(props){
+    return <h1>Hello {props.name}</h1>
 }
 
 export default Geek;`
@@ -122,6 +109,10 @@ class Fun React.Component{
     }
 }
 ```
+
+### Class Component over a Function Component?
+
+>If the component needs state or lifecycle methods then use class component otherwise use function component. However, from React 16.8 with the addition of Hooks, you could use state , lifecycle methods and other features that were only available in class component right in your function component.
 
 ## JSX
 
@@ -160,7 +151,7 @@ export default Hello
 
 ## Props
 
->Props is the shortcut for properties, is the optional input that component can accept. It also allows the component to be dynamic.
+>Props is the shortcut for properties, is the optional input that component can accept. It also allows the component to be dynamic. They are single values or objects containing a set of values that are passed to components on creation using a naming convention similar to HTML-tag attributes. They are data passed down from a parent component to a child component.
 
 ```jsx harmony
 import React from 'react'
@@ -236,7 +227,7 @@ class TextForm extends React.Component{
 
 ## State
 
->State is an object. if normal variable are update then react components are not update in react because react wroking method is different. react only update its components when changes appearing in props and state.
+>State of a component is an object that holds some information that may change over the lifetime of the component. React only update its components when changes appearing in props and state.
 >If there is change in state then react render jsx code only, otherwise it doesn't render.
         
 * ### useState
