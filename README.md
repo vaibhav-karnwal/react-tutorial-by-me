@@ -201,6 +201,32 @@ class TextForm extends React.Component{
 
 >State of a component is an object that holds some information that may change over the lifetime of the component. React only update its components when changes appearing in props and state.
 >If there is change in state then react render jsx code only, otherwise it doesn't render.
+
+```jsx harmony
+import React,{Component} from 'react'
+class TextForm extends Component {
+    constructor(){
+        super();
+        this.state = {
+            text:"vaibhav karnwal"
+        }
+    }
+    handleUpClick=()=>{
+        this.setState({text:"Welcome"});
+    }
+   
+    render(){
+    return (
+        <>
+            <div className="container my-3">
+                <label for="formGroupExampleInput">{this.state.text}</label>
+            </div>
+            <button className='btn btn-primary mx-3' onClick={()=>this.handleUpClick()}>Click me</button>
+        </>
+    )}
+}
+export default TextForm;
+```
         
 * ### useState
 ```jsx harmony
@@ -238,30 +264,52 @@ export default function TextForm(props) {
 
 ```jsx harmony
 import React,{Component} from 'react'
+
 class TextForm extends Component {
-    constructor(){
-        super();
+
+    constructor(props){
+        super(props)
         this.state = {
-            text:"vaibhav karnwal"
+            text:'vaibhav karnwal'
         }
     }
+
     handleUpClick=()=>{
-        this.setState({text:"Welcome"});
+        this.setState((event)=>({
+            text:event.text.toUpperCase()
+        }));
+    }
+    handleLoClick=()=>{
+        this.setState((event)=>({
+            text:event.text.toLowerCase()
+        }));
+    }
+
+    changeInText=(event)=>{
+        this.setState({
+            text: event.target.value
+        });
     }
    
     render(){
-    return (
-        <>
-            <div className="container my-3">
-                <label for="formGroupExampleInput">{this.state.text}</label>
-            </div>
-            <button className='btn btn-primary mx-3' onClick={()=>this.handleUpClick()}>Click me</button>
-        </>
-    )}
+        return (
+            <>
+                <div className="container my-3">
+                    <label htmlFor="formGroupExampleInput">{this.props.heading}</label>
+                    <input type="text" className="form-control" value = {this.state.text} onChange={this.changeInText} id="formGroupExampleInput"/>
+                </div>
+                <button className='btn btn-primary mx-3' onClick={this.handleUpClick}>change to uppercase</button>
+                <button className='btn btn-primary mx-3' onClick={this.handleLoClick}>change to lowercase</button>
+                <div className='container'>
+                    <p>{this.state.text.split(" ").length} words and {this.state.text.length} characters</p>
+                </div>
+            </>
+        )
+    }
 }
+
 export default TextForm;
 ```
-
 >
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
