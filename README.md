@@ -563,6 +563,39 @@ export default function Effect() {
   );
 }
 ```
+### Conditional statements in useEffect
+
+>We can not use useEffect inside conditional statements but yes we can use conditional statements inside useEffect so by that we can perform the same task that we want to perform earlier
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+  const [count, setCount] = useState(0);
+
+  useEffect(()=>{
+    if(count>=1){
+      document.title = `chats ${count}`
+    }else{
+      document.title = `chats`
+    }
+  });
+
+  return (
+    <div>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        })}>
+        Click {count}
+      </button>
+    </div>
+  );
+}
+```
+## React Router
+
+>
 
 
 ## Learn More
