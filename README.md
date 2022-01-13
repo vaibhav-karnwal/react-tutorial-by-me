@@ -595,7 +595,100 @@ export default function Effect() {
 ```
 ## React Router
 
->
+### React-Router-Dom
+### Router
+### Switch
+### Link
+### Route
+
+```jsx harmony
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+```jsx harmony
+import React from "react";
+import Navbar from "./Components/Navbar";
+import About from "./Components/section/About";
+import Home from "./Components/section/Home";
+import Users from "./Components/section/Users";
+
+import { Route, Switch } from "react-router-dom";
+
+export default function App() {
+  return (
+      <>
+        <Navbar/>
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route exact path='/about' component={About}/>
+          <Route exact path='/users' component={Users}/>
+        </Switch>
+      </>
+  );
+}
+```
+
+```jsx harmony
+import React from "react";
+
+export default function Home(){
+    return <h1>Home</h1>
+}
+
+export default function About(){
+    return <h1>About</h1>
+}
+
+export default function Users(){
+    return <h1>Users</h1>
+}
+```
+
+### Passing Props 
+
+```jsx harmony
+import React from "react";
+import Employee from "./Employee";
+
+export default function Users(){
+    return (
+        <>
+            <div className="container my-4">
+                <h1>User data</h1>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' salary = "90000"/>
+            </div>
+        </>
+    )
+}
+```
+
+```jsx harmony
+import React from "react";
+
+export default function Employee(props){
+    return(
+        <>
+            <div className="card b-3 mx-1 p-2 my-2">
+                <h6>Name : {props.name}</h6>
+                <p>department : {props.department}</p>
+                <p>salary : {props.salary}</p>
+            </div>
+        </>
+    )
+}
+```
 
 
 ## Learn More
