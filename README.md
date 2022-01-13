@@ -313,14 +313,14 @@ export default TextForm;
 
 ## Hooks
 
->Hooks are functions that lets us “hook into” React features from function components. Their names always start with use. 
+>Hooks are functions that lets us “hook into” React features from function components. Their names always start with use. Hooks did not work in class and with the help of hooks, we did not have to convert the whole function into class to use state. 
 
 ### Declaring a State Variable
 
->In a class, we initialize the count state to 0 by setting this.state to { count: 0 } in the constructor:
+>In a class,we initialize the state of any variable in the constructor only. we initialize the count state to 0 by setting this.state to { count: 0 } in the constructor:
 
 ```jsx harmony
-class Example extends React.Component {
+class State extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -329,12 +329,12 @@ class Example extends React.Component {
   }
   ```
 
->In a function component, we have no this, so we can’t assign or read this.state. Instead, we call the useState Hook directly inside our component:
+>In a function component, we have no this, so we can’t assign or read this.state. Instead, we call the useState Hook directly inside our component. useState helps us to initialize the state variable.
 
 ```jsx harmony
 import React, { useState } from 'react';
 
-function Example() {
+function State() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
 
@@ -343,9 +343,12 @@ function Example() {
 
 >It declares a “state variable”. Our variable is called count but we could call it anything else also. This is a way to “preserve” some values between the function calls — useState is a new way to use the exact same capabilities that this.state provides in a class.
 
-```jsx harmony const [fruit, setFruit] = useState('banana');```
+```jsx harmony 
+const [fruit, setFruit] = useState('banana');
+```
 
 >This JavaScript syntax is called “array destructuring”. It means that we’re making two new variables fruit and setFruit, where fruit is set to the first value returned by useState, and setFruit is the second. It is equivalent to this code:
+
 ```jsx harmony
   var fruitStateVariable = useState('banana'); // Returns a pair
   var fruit = fruitStateVariable[0]; // First item in a pair
@@ -354,24 +357,33 @@ function Example() {
 >When we declare a state variable with useState, it returns a pair — an array with two items. The first item is the current value, and the second is a function that lets us update it. Using [0] and [1] to access them is a bit confusing because they have a specific meaning. This is why we use array destructuring instead.
 
 ### What does useState return? 
+
 >It returns a pair of values: the current state and a function that updates it. This is why we write const [count, setCount] = useState(). This is similar to this.state.count and this.setState in a class, except you get them in a pair.
 
 ### Reading State
+
 >When we want to display the current count in a class, we read this.state.count:
 
-```jsx harmony  <p>You clicked {this.state.count} times</p> ```
+```jsx harmony  
+    <p>You clicked {this.state.count} times</p> 
+```
 >In a function, we can use count directly:
 
- ```jsx harmony <p>You clicked {count} times</p>```
+ ```jsx harmony 
+ <p>You clicked {count} times</p>
+ ```
 
 ### Updating State
+
 >In a class, we need to call this.setState() to update the count state:
+
 ```jsx harmony
   <button onClick={() => this.setState({ count: this.state.count + 1 })}>
     Click me
   </button>
 ```
 >In a function, we already have setCount and count as variables so we don’t need this:
+
 ```jsx harmony
   <button onClick={() => setCount(count + 1)}>
     Click me
@@ -393,6 +405,11 @@ export default function State(){
     )
 }
 ```
+
+* Line 1: We import the useState Hook from React. It lets us keep local state in a function component.
+* Line 4: Inside the State component, we declare a new state variable by calling the useState Hook. It returns a pair of values, to which we give names. We’re calling our variable count because it holds the number of button clicks. We initialize it to zero by passing 0 as the only useState argument. The second returned item is itself a function. It lets us update the count so we’ll name it setCount.
+* Line 9: When the user clicks, we call setCount with a new value. React will then re-render the State component, passing the new count value to it.
+This might seem like a lot to take in at first. Don’t rush it! If you’re lo
 >
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
