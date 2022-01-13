@@ -410,7 +410,161 @@ export default function State(){
 * Line 4: Inside the State component, we declare a new state variable by calling the useState Hook. It returns a pair of values, to which we give names. We’re calling our variable count because it holds the number of button clicks. We initialize it to zero by passing 0 as the only useState argument. The second returned item is itself a function. It lets us update the count so we’ll name it setCount.
 * Line 9: When the user clicks, we call setCount with a new value. React will then re-render the State component, passing the new count value to it.
 This might seem like a lot to take in at first. Don’t rush it! If you’re lo
->
+
+### useEffect
+
+>This hook perform operation that we will tell it do after component rendering. we keep it in useEffect function. The function that is performed in componentDidMount, componentDidUpdate and componentWillUnmount in class is alone performed in useEffect.
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+    const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        },()=>{
+          alert("I am clicked");
+        })}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+>we found that after button click the value of count is not increasing but it directly moving to the alert function like skiping count increament, so for that we will use useEffect so that when ever the count value change render will occur and after rendering alert we will get.
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+    const [count, setCount] = useState(0);
+    const [num, setNum] = useState(0);
+
+
+  useEffect(()=>{
+    alert("I am clicked");
+  })
+  
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        })}>
+        Click me
+      </button>
+      <p>You clicked {num} times</p>
+      <button onClick={
+        (() =>{
+          setCount(num + 1);
+        })}>
+        Click me
+      </button>
+    </div>
+  );
+}
+```
+>if we use more than one local state variable
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+    const [count, setCount] = useState(0);
+    const [num, setNum] = useState(0);
+
+  useEffect(()=>{
+    alert("I am clicked");
+  });
+
+  return (
+    <div>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        })}>
+        Click {count}
+      </button>
+      <button onClick={
+        (() =>{
+          setNum(num + 1);
+        })}>
+        Click {num}
+      </button>
+    </div>
+  );
+}
+```
+>if we write it like this then the useEffect will execute after every render, which ever state variable value changes. we use [] empty array so that useEffect will only execute when we first time refresh the page, because we pass an empty array to it.
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+    const [count, setCount] = useState(0);
+    const [num, setNum] = useState(0);
+
+  useEffect(()=>{
+    alert("I am clicked");
+  },[]);
+
+  return (
+    <div>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        })}>
+        Click {count}
+      </button>
+      <button onClick={
+        (() =>{
+          setNum(num + 1);
+        })}>
+        Click {num}
+      </button>
+    </div>
+  );
+}
+```
+>and if we want that on clicking particular button, the useEffect will work then we can give put local state variable name into that array like [num].
+
+```jsx harmony
+import React, { useState, useEffect } from 'react';
+
+export default function Effect() {
+    const [count, setCount] = useState(0);
+    const [num, setNum] = useState(0);
+
+  useEffect(()=>{
+    alert("I am clicked");
+  },[num]);
+
+  return (
+    <div>
+      <button onClick={
+        (() =>{
+          setCount(count + 1);
+        })}>
+        Click {count}
+      </button>
+      <button onClick={
+        (() =>{
+          setNum(num + 1);
+        })}>
+        Click {num}
+      </button>
+    </div>
+  );
+}
+```
+
+
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
