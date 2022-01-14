@@ -779,21 +779,15 @@ export default Users;
 import React from "react";
 
 export default function Employee(props){
-    let name = props.data.emp_name.split(" ");
     return(
         <>
-            <div className="card b-3 mx-1 p-2 my-2">
-                <h6 className="position-absolute ">First Name : {name[0]}</h6>
-                <h6 className="position-absolute mx-">Middle Name : {name[1]}</h6>
-                <h6>Last Name : {name[name.length-1]}</h6>
-                <p>Department : {props.data.Department}</p>
-                <p>Id : {props.data.emp_id}</p>
-                <p>Branch : {props.data.Branch}</p>
-                <div className="user_image w-20">
-                    <img src={props.data.emp_image} alt="user_image"/>
-                </div>
-                <p>Date of Joining : {props.data.Dateofjoin}</p>
-            
+            <div className="card mx-1 p-1 w-25 d-flex flex-column">
+                <img  className="" src={props.data.emp_image} alt="user_image"/>    
+                <h6 className="p-2">Employee Name : {props.data.emp_name}</h6>
+                <p className="p-2">Department : {props.data.Department}</p>
+                <p className="p-2">Id : {props.data.emp_id}</p>
+                <p className="p-2">Branch : {props.data.Branch}</p>
+                <p className="p-2">Date of Joining : {props.data.Dateofjoin}</p>
             </div>
         </>
     )
@@ -805,21 +799,15 @@ import React from "react";
 
 export default function Employee(props){
     const {emp_name,emp_image, emp_id, Dateofjoin, Department, Branch} = props.data;
-    let name = emp_name.split(" ");
     return(
         <>
-            <div className="card b-3 mx-1 p-2 my-2">
-                <h6 className="position-absolute ">First Name : {name[0]}</h6>
-                <h6 className="position-absolute mx-">Middle Name : {name[1]}</h6>
-                <h6>Last Name : {name[name.length-1]}</h6>
-                <p>Department : {Department}</p>
-                <p>Id : {emp_id}</p>
-                <p>Branch : {Branch}</p>
-                <div className="user_image w-20">
-                    <img src={emp_image} alt="user_image"/>
-                </div>
-                <p>Date of Joining : {Dateofjoin}</p>
-            
+            <div className="card mx-1 p-1 w-25 d-flex flex-column">
+                <img  className="" src={emp_image} alt="user_image"/>    
+                <h6 className="p-2">Employee Name : {emp_name}</h6>
+                <p className="p-2">Department : {Department}</p>
+                <p className="p-2">Id : {emp_id}</p>
+                <p className="p-2">Branch : {Branch}</p>
+                <p className="p-2">Date of Joining : {Dateofjoin}</p>
             </div>
         </>
     )
