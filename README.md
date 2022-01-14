@@ -99,6 +99,31 @@ class Fun React.Component{
 ### Class Component over a Function Component?
 
 >If the component needs state or lifecycle methods then use class component otherwise use function component. However, from React 16.8 with the addition of Hooks, you could use state , lifecycle methods and other features that were only available in class component right in your function component.
+
+## React fragments
+
+## Nested Components
+
+>Yes, we can use nested component inside any component
+
+```jsx harmony
+import React from "react";
+
+export default function Nested(){
+    return(
+        <>
+            <Person/>
+            <Message/>
+        </>
+    )
+}
+
+const Person=()=><h2>Vaibhav</h2>;
+
+const Message=()=>{
+    return(<p>this is my message</p>);
+}
+```
 ## JSX
 
 >Javascript XML (JSX) is the javascript extension to the javascript langauge syntax which describes the user interface. We do have to import React library for using Jsx. Jsx translate into React.CreateElement which in turn uses the react library.
@@ -684,6 +709,117 @@ export default function Employee(props){
                 <h6>Name : {props.name}</h6>
                 <p>department : {props.department}</p>
                 <p>salary : {props.salary}</p>
+            </div>
+        </>
+    )
+}
+```
+### Maping and Displaying Json data on UI
+
+```jsx harmony
+[
+    {
+
+    "emp_name": "abcdef",
+    "emp_id": "123456",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123456",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123456",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123456",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  }
+]
+```
+```jsx harmony
+import React,{Component} from "react";
+import Employee from "./Employee";
+import Emp from "../data/Emp";
+
+class Users extends Component{
+    render(){
+        return (
+            <div className="container my-4">
+                <h1>User data</h1>
+                {Emp.map(data=>{
+                    return <Employee 
+                        data={data}
+                    />
+                })}
+            </div>
+        )
+    }
+}
+
+export default Users;
+```
+```jsx harmony
+import React from "react";
+
+export default function Employee(props){
+    let name = props.data.emp_name.split(" ");
+    return(
+        <>
+            <div className="card b-3 mx-1 p-2 my-2">
+                <h6 className="position-absolute ">First Name : {name[0]}</h6>
+                <h6 className="position-absolute mx-">Middle Name : {name[1]}</h6>
+                <h6>Last Name : {name[name.length-1]}</h6>
+                <p>Department : {props.data.Department}</p>
+                <p>Id : {props.data.emp_id}</p>
+                <p>Branch : {props.data.Branch}</p>
+                <div className="user_image w-20">
+                    <img src={props.data.emp_image} alt="user_image"/>
+                </div>
+                <p>Date of Joining : {props.data.Dateofjoin}</p>
+            
+            </div>
+        </>
+    )
+}
+
+-------------------or------------------------
+
+import React from "react";
+
+export default function Employee(props){
+    const {emp_name,emp_image, emp_id, Dateofjoin, Department, Branch} = props.data;
+    let name = emp_name.split(" ");
+    return(
+        <>
+            <div className="card b-3 mx-1 p-2 my-2">
+                <h6 className="position-absolute ">First Name : {name[0]}</h6>
+                <h6 className="position-absolute mx-">Middle Name : {name[1]}</h6>
+                <h6>Last Name : {name[name.length-1]}</h6>
+                <p>Department : {Department}</p>
+                <p>Id : {emp_id}</p>
+                <p>Branch : {Branch}</p>
+                <div className="user_image w-20">
+                    <img src={emp_image} alt="user_image"/>
+                </div>
+                <p>Date of Joining : {Dateofjoin}</p>
+            
             </div>
         </>
     )
