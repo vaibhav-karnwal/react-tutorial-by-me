@@ -1,13 +1,20 @@
-import React from "react";
+import React,{Component} from "react";
 import Employee from "./Employee";
+import Emp from "../data/Emp";
 
-export default function Users(){
-    return (
-        <>
-            <div>
+class Users extends Component{
+    render(){
+        return (
+            <div className="container my-4">
                 <h1>User data</h1>
-                <Employee name = 'vaibhav karnwal' department = 'FrontEnd' Salary = {90000}/>
+                {Emp.map(data=>{
+                    return <Employee key={data.emp_id}
+                        {...data}
+                    />
+                })}
             </div>
-        </>
-    )
+        )
+    }
 }
+
+export default Users;

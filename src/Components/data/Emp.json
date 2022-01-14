@@ -1,0 +1,35 @@
+[
+    {
+
+    "emp_name": "abcdef",
+    "emp_id": "123456",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123457",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123458",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  },{
+
+    "emp_name": "abcdef",
+    "emp_id": "123459",
+    "Branch": "Banglore",
+    "Department": "software",
+    "emp_image": "https://media.istockphoto.com/photos/hes-a-model-employee-picture-id517046057?k=6&m=517046057&s=170667a&w=0&h=wByDG3nmaK6NU0Tn3JxcrBYbva8cH8nHa1A6RjNSzqk=",
+    "Dateofjoin": "17/12/2021"
+  }
+]

@@ -436,6 +436,66 @@ export default function State(){
 * Line 9: When the user clicks, we call setCount with a new value. React will then re-render the State component, passing the new count value to it.
 This might seem like a lot to take in at first. Don’t rush it! If you’re lo
 
+### useState in Objects
+
+```jsx harmony
+import React,{useState} from 'react'
+
+export default function useStateInObjects(){
+    const [person, setPerson] = useState({
+        name:"vaibhav",
+        age:26,
+        message:"hello, how are you",
+    })
+
+    const ChangeDetail=()=>{
+        setPerson({...person, message:"fine thankyou"})
+    }
+
+    return(
+        <>
+            <h3>Name: {person.name}</h3>
+            <h3>Age: {person.age}</h3>
+            <h3>Message: {person.message}</h3>
+            <button className='btn-primary' onClick={ChangeDetail}>Change</button>
+        </>
+    )
+}
+```
+### useState in Array
+
+```jsx harmony
+import React,{useState} from "react";
+
+export default function Cart(props){
+    const [cartProduct, setCartProduct] = useState(props)
+    
+    const removeProduct=(id)=>{
+        let newCartProduct = cartProduct.filter((product)=>product.id!==id)
+        setCartProduct(newCartProduct);
+    }
+
+    return(
+        <>
+            {cartProduct.map(product=>{
+                const {id,img,title,price} = product
+                return (
+                    <div className="d-flex flex-row">
+                        <img src={img} alt="product"/>
+                        <div className="d-flex flex-column">
+                            <h6>{title}</h6>
+                            <span>Price : Rs {price}</span>
+                            <button onClick={()=>removeProduct(id)}>Remove</button>
+                        </div>
+                    </div>
+                )
+            })}
+            <button onClick={()=>setCartProduct([])}>Clear Cart</button>
+        </>
+    )
+}
+```
+
 ### useEffect
 
 >This hook perform operation that we will tell it do after component rendering. we keep it in useEffect function. The function that is performed in componentDidMount, componentDidUpdate and componentWillUnmount in class is alone performed in useEffect.
@@ -814,6 +874,50 @@ export default function Employee(props){
 }
 ```
 
+### Using Spread Operator
+
+```jsx harmony
+import React,{Component} from "react";
+import Employee from "./Employee";
+import Emp from "../data/Emp";
+
+class Users extends Component{
+    render(){
+        return (
+            <div className="container my-4">
+                <h1>User data</h1>
+                {Emp.map(data=>{
+                    return <Employee key={data.emp_id}
+                        {...data}
+                    />
+                })}
+            </div>
+        )
+    }
+}
+
+export default Users;
+```
+```jsx harmony
+import React from "react";
+
+export default function Employee(props){
+    console.log(props)
+    const {emp_name,emp_image, emp_id, Dateofjoin, Department, Branch} = props;
+    return(
+        <>
+            <div className="card mx-1 p-1 w-25 d-flex flex-column">
+                <img  className="" src={emp_image} alt="user_image"/>    
+                <h6 className="p-2">Employee Name : {emp_name}</h6>
+                <p className="p-2">Department : {Department}</p>
+                <p className="p-2">Id : {emp_id}</p>
+                <p className="p-2">Branch : {Branch}</p>
+                <p className="p-2">Date of Joining : {Dateofjoin}</p>
+            </div>
+        </>
+    )
+}
+```
 
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
