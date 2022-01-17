@@ -918,7 +918,122 @@ export default function Employee(props){
     )
 }
 ```
+## Fetch Data from Api 
 
+### 1.Fetching Data using Fetch Api Method
+
+>Fetch API is built into most modern browsers on the window object (window.fetch) and enables us to make HTTP requests very easily using JavaScript promises.
+>We can use fetch() method to get the data. This method accepts just an URL to the data.
+>To do so, we will create a method called fetchData(). It will call fetch() method with provided URL, then convert the result to JSON object and print it to the console:
+
+```jsx harmony
+import React, { useEffect } from "react";
+
+export default function Fetch(){
+
+    const api = "https://api.lyrics.ovh/suggest/arijit";
+    const fetchData = () =>{
+        return fetch(api).then(
+            response=>(response.json()).then(
+                data=>console.log(data)
+            )
+        );
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    return (
+        <h1>Fetch data using fetch method</h1>
+    )
+}
+```
+### 2.Fetching Api data using Axios
+
+>It does the same job as Fetch, but the main difference is that it already returns the result as JSON object, so we don't need to convert it.
+>First we need to install it using npm:
+
+```jsx harmony
+npm install axios
+```
+>Than we need to import it to our project and we can use it in the same function fetchData() instead of fetch() method
+>What's convenient about using Axios is that it has a much shorter syntax that allows us to cut down on our code and it includes a lot of tools and features which Fetch does not have in its API.
+
+```jsx harmony
+import React, { useEffect } from 'react'
+import axios from 'axios';
+
+export default function Axios(){
+
+    const api = "https://api.lyrics.ovh/suggest/arijit";
+
+    const fetchData = ()=>{
+        return axios.get(api).then(
+            response=>(console.log(response.data))
+        )
+    }
+
+    useEffect(()=>{
+        fetchData();
+    },[])
+
+    return <h1>Fetch data using Axios</h1>
+}
+```
+### 3.Fetching Data with Async-Await syntax
+
+>In ES7, it became possible to resolve promises using the async-await syntax.
+>The benefit of this is that it enables us to remove our .then() callbacks and simply get back our asynchronously resolved data.
+
+```jsx harmony
+import React, { useEffect } from 'react'
+import axios from 'axios';
+
+export default function Axios(){
+
+    const api = "https://api.lyrics.ovh/suggest/arijit";
+
+    async function fetchData(){
+        try{
+            const result = await axios.get(api)
+            console.log(result.data)
+        }catch(error){
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>{
+        fetchData();
+    },[])
+
+    return <h1>Fetch data using Axios</h1>
+}
+```
+
+### 4.Fetching Data with Custom Hook
+
+>We can use the library React-Fetch-Hook to extract the data from API. It includes already several properties we can use: data, error for errors handling and isLoading for loading issues.
+>First it should be installed:
+```jsx harmony
+npm install react-fetch-hook
+```
+>Then it should be imported and used on top of common parent component
+
+```jsx harmony
+import React, { useEffect } from 'react'
+import useFetch from 'react-fetch-hook';
+
+export default function UseFetch(){
+
+    const api =  "https://api.lyrics.ovh/suggest/arijit";
+
+    const{data}=useFetch(api)
+    console.log(data);
+
+    return <h1>Fetching Data with Custom Hook</h1>
+}
+```
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
