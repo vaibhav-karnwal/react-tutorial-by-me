@@ -1039,7 +1039,7 @@ export default function UseFetch(){
 ### Why use it?
 >Avoid prop drilling (passing props through many layers).
 >Useful for global state like authentication, theme, language, etc.
-```
+```jsx harmony
 import { createContext } from "react";
 
 export const Usecontext = createContext(null);
