@@ -1034,6 +1034,33 @@ export default function UseFetch(){
     return <h1>Fetching Data with Custom Hook</h1>
 }
 ```
+### Context API in React 
+  >The Context API in React JS is a built-in feature that allows you to share data (like state, themes, or user info) across the entire component tree without passing props manually at every level.
+### Why use it?
+>Avoid prop drilling (passing props through many layers).
+>Useful for global state like authentication, theme, language, etc.
+```
+import { createContext } from "react";
+
+export const Usecontext = createContext(null);
+const UserContext = ({ children }) => {
+
+  const Url = import.meta.env.VITE_BACKED_URL_HOST;
+ 
+
+  const value = {
+    Url,
+    
+  };
+  return (
+    <div>
+      <Usecontext.Provider value={value}>{children}</Usecontext.Provider>
+    </div>
+  );
+};
+
+export default UserContext;
+```
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
