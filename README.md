@@ -1061,16 +1061,16 @@ const UserContext = ({ children }) => {
 
 export default UserContext;
 ```
-##📦 What is SWR in React?
-  SWR (stands for “Stale While Revalidate”) is a React Hooks-based data fetching library created by Vercel (the creators of Next.js). It helps you fetch data from an API in a fast, efficient, and reactive way with built-in caching, revalidation, focus tracking, and error handling.
-  ###✅ Why use SWR?
-  🚀 Fast performance with cache-first strategy
-  🔁 Auto revalidation on focus, reconnect, or interval
-  🧠 No need for manual state management
-  😌 Simplifies data fetching logic
-  🔂 Fallback data & error retry features
-  💾 Built-in caching
-  🌐 Works great with REST & GraphQL APIs
+## 📦 What is SWR in React?
+> SWR (stands for “Stale While Revalidate”) is a React Hooks-based data fetching library created by Vercel (the creators of Next.js). It helps you fetch data from an API in a fast, efficient, and reactive way with built-in caching, revalidation, focus tracking, and error handling.
+### ✅ Why use SWR?
+  >🚀 Fast performance with cache-first strategy
+  >🔁 Auto revalidation on focus, reconnect, or interval
+  >🧠 No need for manual state management
+  >😌 Simplifies data fetching logic
+  >🔂 Fallback data & error retry features
+  >💾 Built-in caching
+  >🌐 Works great with REST & GraphQL APIs
 ### ⚙️ Installation
    ```bash
 npm install swr
