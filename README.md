@@ -1034,6 +1034,50 @@ export default function UseFetch(){
     return <h1>Fetching Data with Custom Hook</h1>
 }
 ```
+## SWR in React?
+ >SWR (stands for “Stale While Revalidate”) is a React Hooks-based data fetching library created by Vercel (the creators of Next.js). It helps you fetch data from an API in a fast, efficient, and reactive way with built-in caching, revalidation, focus tracking, and error handling
+### Why use SWR?
+  >🚀 Fast performance with cache-first strategy
+  >🔁 Auto revalidation on focus, reconnect, or interval
+  >🧠 No need for manual state management
+  >😌 Simplifies data fetching logic
+  >🔂 Fallback data & error retry features
+  >💾 Built-in caching
+  >🌐 Works great with REST & GraphQL APIs
+
+ ### ⚙️ Installation
+  ```bash
+    npm install swr
+    # or
+    yarn add swr
+```
+```jsx harmony
+import useSWR from 'swr';
+import { fetcher } from '../fetcher';
+
+function UserList() {
+  const { data, error, isLoading } = useSWR('https://jsonplaceholder.typicode.com/users', fetcher);
+
+  if (isLoading) return <p>Loading users...</p>;
+  if (error) return <p>Failed to load users.</p>;
+
+  return (
+    <div>
+      <h2>User List</h2>
+      <ul>
+        {data.map((user) => (
+          <li key={user.id}>
+            {user.name} - {user.email}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default UserList;
+```
+ 
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
