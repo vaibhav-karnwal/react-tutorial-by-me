@@ -1105,7 +1105,16 @@ function UserList() {
 
 export default UserList;
 ```
-
+ ### 🧠 Advanced Features
+   >Revalidate on focus:When the user switches back to the tab, SWR automatically re-fetches data.
+>Polling:
+```jsx harmony
+useSWR('/api/data', fetcher, { refreshInterval: 3000 }); // every 3 seconds
+```
+>Fallback Data (useful for SSR/SSG):
+```jsx harmony
+useSWR('/api/user', fetcher, { fallbackData: { name: 'Loading...' } });
+```
 ## Learn More
 >You can learn more in the [Create React App documentation](https://facebook.github.io/cr eate-react-app/docs/getting-started).
 To learn React, check out the [React documentation](https://reactjs.org/).
